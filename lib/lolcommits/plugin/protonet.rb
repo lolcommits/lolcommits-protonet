@@ -38,14 +38,13 @@ module Lolcommits
       # @return [Hash] a hash of configured plugin options
       #
       def configure_options!
-        puts "-----------------------------------"
-        puts " Lolcommits Protonet Plugin Config"
-        puts "-----------------------------------"
+        puts "-----------------------------------------------------------------"
+        puts "              Lolcommits Protonet Plugin Config"
+        puts "-----------------------------------------------------------------"
         puts "\n"
-        puts "We'll need an API endpoint & token"
-        puts "You'll find Protonet API info on "
-        puts "your box at Help/Protonet Rest API"
-        puts "-----------------------------------"
+        puts "We'll need an API endpoint & token. Find API info on your box at "
+        puts "Help/Protonet Rest API. Visit https://protonet.com for more info."
+        puts "-----------------------------------------------------------------"
         puts "\n"
         super
       end
