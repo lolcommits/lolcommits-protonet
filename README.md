@@ -10,9 +10,12 @@
 every time you git commit code, and archives a lolcat style image with it. Git
 blame has never been so much fun!
 
-This plugin allows you to push lolcommits to your Protonet box. You should
-follow the API documentation found on your box under Help/"Protonet REST API" to
-get an API token.
+This plugin allows you to push lolcommits to your Protonet box. The captured
+commit image is uploaded with a randomly generated message that includes the
+commit sha and branch name.
+
+You should follow the API documentation found on your box under Help/"Protonet
+REST API" to get an API token.
 
 ## Requirements
 
