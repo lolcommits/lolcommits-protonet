@@ -2,8 +2,8 @@
 
 [![Gem Version](https://img.shields.io/gem/v/lolcommits-protonet.svg?style=flat)](http://rubygems.org/gems/lolcommits-protonet)
 [![Travis Build Status](https://travis-ci.org/lolcommits/lolcommits-protonet.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-protonet)
-[![Test Coverage](https://codeclimate.com/github/lolcommits/lolcommits-protonet/badges/coverage.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/coverage)
-[![Code Climate](https://codeclimate.com/github/lolcommits/lolcommits-protonet/badges/gpa.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/test_coverage)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
+[![Code Climate](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/maintainability)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
 [![Gem Dependency Status](https://gemnasium.com/badges/github.com/lolcommits/lolcommits-protonet.svg)](https://gemnasium.com/github.com/lolcommits/lolcommits-protonet)
 
 [lolcommits](https://lolcommits.github.io/) takes a snapshot with your webcam
@@ -23,7 +23,7 @@ REST API" to get an API token.
 * A webcam
 * [ImageMagick](http://www.imagemagick.org)
 * [ffmpeg](https://www.ffmpeg.org) (optional) for animated gif capturing
-* A [Protonet Box](https://protonet.com)
+* A [Protonet](https://protonet.com) box
 
 ## Installation
 
@@ -96,8 +96,8 @@ The gem is available as open source under the terms of
 ## Links
 
 * [Travis CI](https://travis-ci.org/lolcommits/lolcommits-protonet)
-* [Code Climate](https://codeclimate.com/github/lolcommits/lolcommits-protonet)
-* [Test Coverage](https://codeclimate.com/github/lolcommits/lolcommits-protonet/coverage)
+* [Code Climate](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
+* [Test Coverage](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
 * [RDoc](http://rdoc.info/projects/lolcommits/lolcommits-protonet)
 * [Issues](http://github.com/lolcommits/lolcommits-protonet/issues)
 * [Report a bug](http://github.com/lolcommits/lolcommits-protonet/issues/new)
