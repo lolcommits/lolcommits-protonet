@@ -5,14 +5,6 @@ describe Lolcommits::Plugin::Protonet do
   include Lolcommits::TestHelpers::GitRepo
   include Lolcommits::TestHelpers::FakeIO
 
-  def plugin_name
-    "protonet"
-  end
-
-  it "should have a name" do
-    ::Lolcommits::Plugin::Protonet.name.must_equal plugin_name
-  end
-
   it "should run on capture ready" do
     ::Lolcommits::Plugin::Protonet.runner_order.must_equal [:capture_ready]
   end
@@ -22,7 +14,6 @@ describe Lolcommits::Plugin::Protonet do
       # a simple lolcommits runner with an empty configuration Hash
       @runner ||= Lolcommits::Runner.new(
         main_image: Tempfile.new('main_image.jpg'),
-        config: OpenStruct.new(read_configuration: {})
       )
     end
 
@@ -31,15 +22,11 @@ describe Lolcommits::Plugin::Protonet do
     end
 
     def valid_enabled_config
-      @config ||= OpenStruct.new(
-        read_configuration: {
-          "protonet" => {
-            "enabled" => true,
-            "api_endpoint" => api_endpoint,
-            "api_token" => "proto-token"
-          }
-        }
-      )
+      {
+        enabled: true,
+        api_endpoint: api_endpoint,
+        api_token: "proto-token"
+      }
     end
 
     def api_endpoint
@@ -49,17 +36,17 @@ describe Lolcommits::Plugin::Protonet do
     describe "initalizing" do
       it "assigns runner and all plugin options" do
         plugin.runner.must_equal runner
-        plugin.options.must_equal %w(enabled api_endpoint api_token)
+        plugin.options.must_equal [:enabled, :api_endpoint, :api_token]
       end
     end
 
     describe "#enabled?" do
       it "is false by default" do
-        plugin.enabled?.must_equal false
+        assert_nil plugin.enabled?
       end
 
       it "is true when configured" do
-        plugin.config = valid_enabled_config
+        plugin.configuration = valid_enabled_config
         plugin.enabled?.must_equal true
       end
     end
@@ -70,7 +57,7 @@ describe Lolcommits::Plugin::Protonet do
 
       it "posts lolcommit with message to protonet box" do
         in_repo do
-          plugin.config = valid_enabled_config
+          plugin.configuration = valid_enabled_config
 
           stub_request(:post, api_endpoint).to_return(status: 200)
 
@@ -87,7 +74,7 @@ describe Lolcommits::Plugin::Protonet do
 
       it "returns nil if an error occurs" do
         in_repo do
-          plugin.config = valid_enabled_config
+          plugin.configuration = valid_enabled_config
           stub_request(:post, api_endpoint).to_return(status: 501)
 
           assert_nil plugin.run_capture_ready
@@ -96,15 +83,6 @@ describe Lolcommits::Plugin::Protonet do
     end
 
     describe "configuration" do
-      it "returns false when not configured" do
-        plugin.configured?.must_equal false
-      end
-
-      it "returns true when configured" do
-        plugin.config = valid_enabled_config
-        plugin.configured?.must_equal true
-      end
-
       it "allows plugin options to be configured" do
         # enabled, api endpoint, api token
         inputs = %W(true #{api_endpoint} proto-token)
@@ -116,9 +94,9 @@ describe Lolcommits::Plugin::Protonet do
         end
 
         configured_plugin_options.must_equal({
-          "enabled"      => true,
-          "api_endpoint" => api_endpoint,
-          "api_token"    => inputs[2]
+          enabled: true,
+          api_endpoint: api_endpoint,
+          api_token: inputs[2]
         })
       end
     end

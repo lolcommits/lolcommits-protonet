@@ -10,16 +10,7 @@ module Lolcommits
       #
       def initialize(runner: nil, config: nil)
         super
-        options.concat(plugin_options)
-      end
-
-      ##
-      # Returns the name of the plugin to identify the plugin to lolcommits.
-      #
-      # @return [String] the plugin name
-      #
-      def self.name
-        'protonet'
+        options.concat([:api_endpoint, :api_token])
       end
 
       ##
@@ -50,18 +41,6 @@ module Lolcommits
       end
 
       ##
-      # Returns true if the plugin has been configured.
-      #
-      # @return [Boolean] true/false indicating if plugin is configured. An API
-      # token and endpoint are required.
-      #
-      def configured?
-        !!(configuration['enabled'] &&
-           configuration['api_token'] &&
-           configuration['api_endpoint'])
-      end
-
-      ##
       # Post-capture hook, runs after lolcommits captures a snapshot. Posts the
       # lolcommit image with a message to the Protonet box. API Documentation
       # can be found on the Protonet box under Help/"Protonet REST API"
@@ -70,14 +49,14 @@ module Lolcommits
       # @return [Nil] if any error occurs
       #
       def run_capture_ready
-        debug "Posting image (and message) to #{configuration['api_endpoint']}"
+        debug "Posting image (and message) to #{configuration[:api_endpoint]}"
         RestClient.post(
-          configuration['api_endpoint'],
+          configuration[:api_endpoint],
           {
             files: [File.new(runner.main_image)],
             message: message
           },
-          'X-Protonet-Token' => configuration['api_token']
+          'X-Protonet-Token' => configuration[:api_token]
         )
       rescue => e
         log_error(e, "ERROR: RestClient POST FAILED #{e.class} - #{e.message}")
@@ -124,16 +103,6 @@ module Lolcommits
           ' - Tavonius would be proud of this - ', 'Meg FAILMAN!', '- very brofessional of you -',
           'heartbleeding', 'juciy', 'supercalifragilisticexpialidocious', 'failing', 'loving'
         ].sample
-      end
-
-      ##
-      # Returns all configuration options available for this plugin. An API
-      # endpoint and token.
-      #
-      # @return [Array] the option names
-      #
-      def plugin_options
-        %w(api_endpoint api_token)
       end
     end
   end
