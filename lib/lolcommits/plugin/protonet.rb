@@ -8,19 +8,9 @@ module Lolcommits
       ##
       # Initialize plugin with runner, config and set all configurable options.
       #
-      def initialize(runner: nil, config: nil)
+      def initialize(runner: nil, config: nil, name: nil)
         super
         options.concat([:api_endpoint, :api_token])
-      end
-
-      ##
-      # Returns position(s) of when this plugin should run during the capture
-      # process. Posting to a Protonet box happens when a new capture is ready.
-      #
-      # @return [Array] the position(s) (:capture_ready)
-      #
-      def self.runner_order
-        [:capture_ready]
       end
 
       ##
