@@ -1,10 +1,10 @@
 # Lolcommits Protonet
 
-[![Gem Version](https://img.shields.io/gem/v/lolcommits-protonet.svg?style=flat)](http://rubygems.org/gems/lolcommits-protonet)
-[![Travis Build Status](https://travis-ci.org/lolcommits/lolcommits-protonet.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-protonet)
+[![Gem](https://img.shields.io/gem/v/lolcommits-protonet.svg?style=flat)](http://rubygems.org/gems/lolcommits-protonet)
+[![Travis](https://travis-ci.org/lolcommits/lolcommits-protonet.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-protonet)
+[![Depfu](https://img.shields.io/depfu/lolcommits/lolcommits-protonet.svg?style=flat)](https://depfu.com/github/lolcommits/lolcommits-protonet)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/lolcommits/lolcommits-protonet.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
 [![Test Coverage](https://img.shields.io/codeclimate/c/lolcommits/lolcommits-protonet.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
-[![Gem Dependency Status](https://gemnasium.com/badges/github.com/lolcommits/lolcommits-protonet.svg)](https://gemnasium.com/github.com/lolcommits/lolcommits-protonet)
 
 [lolcommits](https://lolcommits.github.io/) takes a snapshot with your webcam
 every time you git commit code, and archives a lolcat style image with it. Git
