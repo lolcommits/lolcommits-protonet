@@ -3,8 +3,8 @@
 [![Gem](https://img.shields.io/gem/v/lolcommits-protonet.svg?style=flat)](http://rubygems.org/gems/lolcommits-protonet)
 [![Travis](https://travis-ci.org/lolcommits/lolcommits-protonet.svg?branch=master)](https://travis-ci.org/lolcommits/lolcommits-protonet)
 [![Depfu](https://img.shields.io/depfu/lolcommits/lolcommits-protonet.svg?style=flat)](https://depfu.com/github/lolcommits/lolcommits-protonet)
-[![Maintainability](https://img.shields.io/codeclimate/maintainability/lolcommits/lolcommits-protonet.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
-[![Test Coverage](https://img.shields.io/codeclimate/c/lolcommits/lolcommits-protonet.svg)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/maintainability)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/test_coverage)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
 
 [lolcommits](https://lolcommits.github.io/) takes a snapshot with your webcam
 every time you git commit code, and archives a lolcat style image with it. Git
