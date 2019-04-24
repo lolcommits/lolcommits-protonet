@@ -1,21 +1,19 @@
-# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lolcommits/protonet/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lolcommits-protonet"
-  spec.version       = Lolcommits::Protonet::VERSION
-  spec.authors       = ["Matthew Hutchinson"]
-  spec.email         = ["matt@hiddenloop.com"]
-  spec.summary       = %q{Posts lolcommits to a Protonet box}
+  spec.name     = "lolcommits-protonet"
+  spec.version  = Lolcommits::Protonet::VERSION
+  spec.authors  = ["Matthew Hutchinson"]
+  spec.email    = ["matt@hiddenloop.com"]
+  spec.summary  = %q{Posts lolcommits to a Protonet box}
+  spec.homepage = "https://github.com/lolcommits/lolcommits-protonet"
+  spec.license  = "LGPL-3"
 
-  spec.description = <<-EOF
+  spec.description = <<-DESC
   Automatically post lolcommit images (with a message) to your Protonet box.
-  EOF
-
-  spec.homepage      = "https://github.com/lolcommits/lolcommits-protonet"
-  spec.license       = "LGPL-3"
+  DESC
 
   spec.metadata = {
     "homepage_uri"    => "https://github.com/lolcommits/lolcommits-protonet",
