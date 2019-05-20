@@ -6,16 +6,16 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/maintainability)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5754a7b62824fe86a9e4/test_coverage)](https://codeclimate.com/github/lolcommits/lolcommits-protonet/test_coverage)
 
-[lolcommits](https://lolcommits.github.io/) takes a snapshot with your webcam
-every time you git commit code, and archives a lolcat style image with it. Git
-blame has never been so much fun!
+[lolcommits](https://lolcommits.github.io/) takes a snapshot with your
+webcam every time you git commit code, and archives a lolcat style image
+with it. Git blame has never been so much fun!
 
-This plugin allows you to push lolcommits to your Protonet box. The captured
-commit image is uploaded with a randomly generated message that includes the
-commit sha and branch name.
+This plugin allows you to push lolcommits to your Protonet box. The
+captured lolcommit is uploaded with a randomly generated message that
+includes the commit sha and branch name.
 
-You should follow the API documentation found on your box under Help/"Protonet
-REST API" to get an API token.
+You should follow the API documentation found on your box under
+Help/"Protonet REST API" to get an API token.
 
 ## Requirements
 
@@ -44,12 +44,12 @@ That's it! To disable uninstall this gem or:
 
 ## Development
 
-Check out this repo and run `bin/setup`, this will install all dependencies and
-generate docs. Use `bundle exec rake` to run all tests and generate a coverage
-report.
+Check out this repo and run `bin/setup`, this will install all
+dependencies and generate docs. Use `bundle exec rake` to run all tests
+and generate a coverage report.
 
-You can also run `bin/console` for an interactive prompt that will allow you to
-experiment with the gem code.
+You can also run `bin/console` for an interactive prompt that will allow
+you to experiment with the gem code.
 
 ## Tests
 
@@ -67,24 +67,27 @@ Generate docs for this gem with:
 
 If you think something is broken or missing, please raise a new
 [issue](https://github.com/lolcommits/lolcommits-protonet/issues). Take
-a moment to check it hasn't been raised in the past (and possibly closed).
+a moment to check it hasn't been raised in the past (and possibly
+closed).
 
 ## Contributing
 
-Bug [reports](https://github.com/lolcommits/lolcommits-protonet/issues) and [pull
-requests](https://github.com/lolcommits/lolcommits-protonet/pulls) are welcome on
-GitHub.
+Bug [reports](https://github.com/lolcommits/lolcommits-protonet/issues)
+and [pull
+requests](https://github.com/lolcommits/lolcommits-protonet/pulls) are
+welcome on GitHub.
 
-When submitting pull requests, remember to add tests covering any new behaviour,
-and ensure all tests are passing on [Travis
+When submitting pull requests, remember to add tests covering any new
+behaviour, and ensure all tests are passing on [Travis
 CI](https://travis-ci.com/lolcommits/lolcommits-protonet). Read the
 [contributing
 guidelines](https://github.com/lolcommits/lolcommits-protonet/blob/master/CONTRIBUTING.md)
 for more details.
 
-This project is intended to be a safe, welcoming space for collaboration, and
-contributors are expected to adhere to the [Contributor
-Covenant](http://contributor-covenant.org) code of conduct. See
+This project is intended to be a safe, welcoming space for
+collaboration, and contributors are expected to adhere to the
+[Contributor Covenant](http://contributor-covenant.org) code of conduct.
+See
 [here](https://github.com/lolcommits/lolcommits-protonet/blob/master/CODE_OF_CONDUCT.md)
 for more details.
 

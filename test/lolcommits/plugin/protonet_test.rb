@@ -11,7 +11,7 @@ describe Lolcommits::Plugin::Protonet do
     def runner
       # a simple lolcommits runner with an empty configuration Hash
       @runner ||= Lolcommits::Runner.new(
-        main_image: Tempfile.new('main_image.jpg'),
+        lolcommit_path: Tempfile.new('lolcommit.jpg'),
       )
     end
 
@@ -63,7 +63,7 @@ describe Lolcommits::Plugin::Protonet do
 
           assert_requested :post, api_endpoint, times: 1,
             headers: {'Content-Type' => /multipart\/form-data/ } do |req|
-            req.body.must_match(/Content-Disposition: form-data;.+name="files\[\]"; filename="main_image.jpg.+"/)
+            req.body.must_match(/Content-Disposition: form-data;.+name="files\[\]"; filename="lolcommit.jpg.+"/)
             req.body.must_match 'name="message"'
             req.body.must_match "plugin-test-repo"
           end
