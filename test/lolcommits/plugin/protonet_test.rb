@@ -33,19 +33,19 @@ describe Lolcommits::Plugin::Protonet do
 
     describe "initalizing" do
       it "assigns runner and all plugin options" do
-        plugin.runner.must_equal runner
-        plugin.options.must_equal [:enabled, :api_endpoint, :api_token]
+        _(plugin.runner).must_equal runner
+        _(plugin.options).must_equal [:enabled, :api_endpoint, :api_token]
       end
     end
 
     describe "#enabled?" do
       it "is false by default" do
-        plugin.enabled?.must_equal false
+        _(plugin.enabled?).must_equal false
       end
 
       it "is true when configured" do
         plugin.configuration = valid_enabled_config
-        plugin.enabled?.must_equal true
+        _(plugin.enabled?).must_equal true
       end
     end
 
@@ -63,9 +63,9 @@ describe Lolcommits::Plugin::Protonet do
 
           assert_requested :post, api_endpoint, times: 1,
             headers: {'Content-Type' => /multipart\/form-data/ } do |req|
-            req.body.must_match(/Content-Disposition: form-data;.+name="files\[\]"; filename="lolcommit.jpg.+"/)
-            req.body.must_match 'name="message"'
-            req.body.must_match "plugin-test-repo"
+            _(req.body).must_match(/Content-Disposition: form-data;.+name="files\[\]"; filename="lolcommit.jpg.+"/)
+            _(req.body).must_match 'name="message"'
+            _(req.body).must_match "plugin-test-repo"
           end
         end
       end
@@ -91,7 +91,7 @@ describe Lolcommits::Plugin::Protonet do
           configured_plugin_options = plugin.configure_options!
         end
 
-        configured_plugin_options.must_equal({
+        _(configured_plugin_options).must_equal({
           enabled: true,
           api_endpoint: api_endpoint,
           api_token: inputs[2]
